@@ -2,7 +2,25 @@
 
 Competition on PAge Segmentation. This competition will facilitate research in page segmentation. An annotated database is collected from XX archives with XXX page images. The objective is to automatically locate and correctly label regions in document page images.
 
-## Annotation
+## ToC
+- [Prerequisite](#prerequisite)
+- [Database Creation](#database-creation)
+  - [Annotation](#Annotation)
+  - [Scripts](#Scripts)
+  - [Discussion](#discussion)
+- [Source Collection](#source-collection)
+  - [Statistics](#statistics)
+  - [Notes](#notes)
+  - [Removed Sources](#removed-sources)
+
+## Prerequisite
+
+- python 3.x in your system path
+- our [benchmarking script](https://github.com/TUWien/Benchmarking)
+
+## Database Creation
+
+### Annotation
 
 - Handwritten text block
 - Machine printed text block
@@ -11,14 +29,10 @@ Competition on PAge Segmentation. This competition will facilitate research in p
 - Signatures
 - Initials (?!)
 
-## Prerequisits
+### Scripts
 
-- python 3.x in your system path
-- our [benchmarking script](https://github.com/TUWien/Benchmarking)
-
-## Database Collection
-
-Generate the database automatically with this script (if the sources are assembled correctly):
+- `cd` to the directory containing the [benchmarking script](https://github.com/TUWien/Benchmarking)
+- Generate the database automatically with this script:
 ```bat
 REM cPAS small
 SET NUM_PAGES=300
@@ -26,6 +40,13 @@ SET SRC=\\carl\Read01\competition\cPAS\sources
 SET DST=C:/READ/cPAS/
 python lib\database\cdb.py --outfile %DST%/logs/db-%DATE%-%NUM_PAGES%.txt --copyto %DST%/database/cPAS-%DATE%-%NUM_PAGES% %SRC% %NUM_PAGES%
 ```
+
+### Discussion
+
+- We are currently missing printed pages
+- The label marginalia is not included since it has no visual feature
+
+## Source Collection
 
 - Ambraser_Heldenbuch_structural_tagging [118]
     - Initials
@@ -53,7 +74,7 @@ python lib\database\cdb.py --outfile %DST%/logs/db-%DATE%-%NUM_PAGES%.txt --copy
 
 ```bat
 REM Ambraser_Heldenbuch_structural_tagging
-python lib\database\cdb.py --outfile C:/READ/cPAS/logs/db-300.txt --copyto C:/READ/cPAS/database/27-08-Ambraser_Heldenbuch_structural_tagging-300 \\carl\Read01\competition\cPAS\sources\Ambraser_Heldenbuch_structural_tagging 300
+python lib\database\cdb.py --batch --flatcopy --outfile C:/READ/cPAS/logs/db-300.txt --copyto C:/READ/cPAS/database/27-08-Ambraser_Heldenbuch_structural_tagging-300 \\carl\Read01\competition\cPAS\sources\Ambraser_Heldenbuch_structural_tagging 300
 
 [118]    \\carl\Read01\competition\cPAS\sources\Ambraser_Heldenbuch_structural_tagging
 I was crawling with 6 processes
@@ -245,7 +266,23 @@ I found 140418 candidates in 37021 dirs in 962 secs
 
 </details>
 
-## Removed Datasets
+## Notes
+
+We sub-sampled ``unibas_e-Manuscripta`` for speed-up purposes:
+
+```bat
+REM unibas_e-Manuscripta
+python lib\database\cdb.py --flatcopy --outfile C:/READ/cPAS/logs/db-unibas-10000.txt --copyto \\carl\Read01\competition\cPAS\sources\unibas_e-Manuscripta-small \\carl\Read01\ftp-ibk\unibas_e-Manuscripta 10000
+```
+
+Same goes for ``StAM_Marburg_Grimm_SetP``:
+
+```bat
+REM StAM_Marburg_Grimm_SetP
+python lib\database\cdb.py --flatcopy --outfile C:/READ/cPAS/logs/db-StAM_Marburg_Grimm_SetP-10000.txt --copyto \\carl\Read01\competition\cPAS\sources\StAM_Marburg_Grimm_SetP-small \\carl\Read01\ftp-ibk\StAM_Marburg_Grimm_SetP 10000
+```
+
+### Removed Sources
 
 - EPFL_VTM_FirstTestCollection
   - homogeneous (remove?)
