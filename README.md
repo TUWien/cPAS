@@ -47,11 +47,10 @@ python lib\database\cdb.py --outfile %DST%/logs/db-%DATE%-%NUM_PAGES%.txt --copy
 - The label marginalia is not included since it has no visual feature
 
 ## Source Collection
-
 - Ambraser_Heldenbuch_structural_tagging [118]
-    - Initials
-    - Decorations
-    - Regions are tagged already
+  - Initials
+  - Decorations
+  - Regions are tagged already
 - George_Forrest_Herbarium_Specimens_Batch_5 [200]
   - dry plants
   - color palettes
@@ -284,6 +283,8 @@ python lib\database\cdb.py --flatcopy --outfile C:/READ/cPAS/logs/db-StAM_Marbur
 
 ### Removed Sources
 
+- Alfred_Escher_Dataset [13543]
+  - mostly letters
 - EPFL_VTM_FirstTestCollection
   - homogeneous (remove?)
   - marginalia
@@ -293,6 +294,18 @@ python lib\database\cdb.py --flatcopy --outfile C:/READ/cPAS/logs/db-StAM_Marbur
 - UCL_Bentham_SetP [23476]
   - printed documents
   - crossed-out sections
+
+```bat
+REM Alfred_Escher_Dataset
+python lib\database\cdb.py --flatcopy --outfile C:/READ/cPAS/logs/escher-300.txt --copyto C:/READ/cPAS/database/27-08-Alfred_Escher_Dataset-300 \\carl\Read01\ftp-ibk\Alfred_Escher_Dataset\Alfred_Escher_Dataset\Alfred_Escher_Dataset\images 300
+
+[13543]   \\carl\Read01\ftp-ibk\Alfred_Escher_Dataset\Alfred_Escher_Dataset\Alfred_Escher_Dataset\images
+I was crawling with 6 processes
+I found 13543 candidates in 1 dirs in 4 secs
+300 lines written to C:/READ/cPAS/logs/escher-300.txt
+```
+
+![Alfred Escher](./screenshots/Alfred_Escher_Dataset.png)
 
 ```bat
 REM EPFL_VTM_FirstTestCollection
