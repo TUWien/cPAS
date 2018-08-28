@@ -32,13 +32,14 @@ Competition on PAge Segmentation. This competition will facilitate research in p
 ### Scripts
 
 - `cd` to the directory containing the [benchmarking script](https://github.com/TUWien/Benchmarking)
-- Generate the database automatically with this script:
+- Equalize the database with this script:
+
 ```bat
 REM cPAS small
-SET NUM_PAGES=300
+SET NUM_PAGES=800
 SET SRC=\\carl\Read01\competition\cPAS\sources
 SET DST=C:/READ/cPAS/
-python lib\database\cdb.py --outfile %DST%/logs/db-%DATE%-%NUM_PAGES%.txt --copyto %DST%/database/cPAS-%DATE%-%NUM_PAGES% %SRC% %NUM_PAGES%
+python lib\database\cdb.py --batch --flatcopy --outfile %DST%/logs/db-%DATE%-%NUM_PAGES%.txt --copyto %DST%/database/cPAS-%DATE%-%NUM_PAGES% %SRC% %NUM_PAGES%
 ```
 
 ### Discussion
@@ -47,6 +48,7 @@ python lib\database\cdb.py --outfile %DST%/logs/db-%DATE%-%NUM_PAGES%.txt --copy
 - The label marginalia is not included since it has no visual feature
 
 ## Source Collection
+
 - Ambraser_Heldenbuch_structural_tagging [118]
   - Initials
   - Decorations
