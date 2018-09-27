@@ -27,7 +27,7 @@ Competition on PAge Segmentation. This competition will facilitate research in p
 - Image (Photo/Drawing/Figure)
 - Seals
 - Signatures
-- Initials (?!)
+- Initials
 
 ### Scripts
 
