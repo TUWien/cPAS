@@ -3,6 +3,7 @@
 Competition on PAge Segmentation. This competition will facilitate research in page segmentation. An annotated database is collected from XX archives with XXX page images. The objective is to automatically locate and correctly label regions in document page images.
 
 ## ToC
+
 - [Prerequisite](#prerequisite)
 - [Database Creation](#database-creation)
   - [Annotation](#Annotation)
@@ -27,7 +28,6 @@ Competition on PAge Segmentation. This competition will facilitate research in p
 - Image (Photo/Drawing/Figure)
 - Seals
 - Signatures
-- Initials (?!)
 
 ### Scripts
 
