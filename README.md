@@ -54,10 +54,12 @@ python lib\database\cdb.py --batch --flatcopy --outfile %DST%/logs/db-%DATE%-%NU
   - Initials
   - Decorations
   - Regions are tagged already
+  - 16th century
 - George_Forrest_Herbarium_Specimens_Batch_5 [200]
   - dry plants
   - color palettes
-- NAF_challenges
+  - ~1905
+- NAF_challenges [270]
   - Kadaster
   - Tables
   - Stamps
@@ -65,6 +67,7 @@ python lib\database\cdb.py --batch --flatcopy --outfile %DST%/logs/db-%DATE%-%NU
 - StAM_Marburg_Grimm_SetP [18255]
   - BW
   - Images/Stamps
+  - 1946
 - Uni_Greifswald_4_Different_DocTypes [16306]
   - mainly homogeneous
   - only 555nd_Hs_7_edeldehis_702716863_tif_400_dpi has Initials
